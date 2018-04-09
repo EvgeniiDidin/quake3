@@ -239,7 +239,9 @@ ifeq ($(PLATFORM),linux)
   endif
 
   BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
-    -pipe -DUSE_ICON $(shell sdl-config --cflags)
+    -pipe -DUSE_ICON \
+    -I<path-to-buildroot>/output/staging/usr/include/SDL \
+    -D_GNU_SOURCE=1 -D_REENTRANT
 
   ifeq ($(USE_OPENAL),1)
     BASE_CFLAGS += -DUSE_OPENAL

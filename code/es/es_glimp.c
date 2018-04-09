@@ -111,7 +111,7 @@ void rgba4444_convert_tex_image(
    free(rgba4444data);
 }
 
-void myglTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
+void glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
 {
    static int opaque = 0;
 
@@ -134,7 +134,7 @@ void myglTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei w
 
 static int firstclear = 1;
 
-void myglClear(GLbitfield mask)
+void glClear(GLbitfield mask)
 {
    if (firstclear) {
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -189,13 +189,13 @@ static void update_viewport_and_scissor(void)
    glScissor(r.x, r.y, r.w, r.h);
 }
 
-void myglDrawBuffer(GLenum mode)
+void glDrawBuffer(GLenum mode)
 {
    draw_buffer = mode;
    update_viewport_and_scissor();
 }
 
-void myglViewport(GLint x, GLint y, GLsizei width, GLsizei height)
+void glViewport(GLint x, GLint y, GLsizei width, GLsizei height)
 {
    viewport.x = x;
    viewport.y = y;
@@ -204,7 +204,7 @@ void myglViewport(GLint x, GLint y, GLsizei width, GLsizei height)
    update_viewport_and_scissor();
 }
 
-void myglScissor(GLint x, GLint y, GLsizei width, GLsizei height)
+void glScissor(GLint x, GLint y, GLsizei width, GLsizei height)
 {
    scissor.x = x;
    scissor.y = y;

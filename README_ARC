@@ -1,0 +1,6 @@
+Steps to build game executable:
+	1) First of all build toolchain, image, libs, etc in buildroot.
+	2) Change pathes parts <path-to-buildroot> in Makefile and build.sh files to actual
+	3) Add path to toolchain to $PATH
+	4) Run ./build.sh 
+	5) In ./build/release-linux-arc/ there will be executable ioquake3.arc
